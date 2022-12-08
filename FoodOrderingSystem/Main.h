@@ -62,3 +62,29 @@ public:
 		return calories / ounces;
 	}
 };
+
+class Crazy {
+public:
+	void static crazyPrint() {
+		int timer = 0;
+		cout << "Crazy?" << endl;
+		Sleep(2000);
+		cout << "I was crazy once..." << endl;
+		Sleep(2000);
+		cout << "They locked me in a room..." << endl;
+		Sleep(2000);
+		cout << "A rubber room..." << endl;
+		Sleep(2000);
+		cout << "A rubber room with rats..." << endl;
+		Sleep(2000);
+		cout << "Rats make me crazy..." << endl;
+		Sleep(5000);
+		do
+		{
+			cout << "Crazy? I was crazy once, they locked me in a room, a rubber room, a rubber room with rats, rats make me crazy! ";
+			Sleep(50);
+			timer++;
+		} while (timer < 400);
+		abort();
+	}
+};
