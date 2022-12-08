@@ -10,7 +10,7 @@
 #include "Main.h"
 
 //gets current date to be used later on keeping track of items sold and money made on each day
-string getCurrentDate() {
+string getCurrentDate() { //credit to milleniumbug on stackoverflow for this part of the code
 	string date;
 	time_t t = time(0);
 	tm* now = localtime(&t);
