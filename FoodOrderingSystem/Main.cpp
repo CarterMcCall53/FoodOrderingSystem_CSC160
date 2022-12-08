@@ -219,8 +219,8 @@ void drinks() {
 int main() {
 	const double SALES_TAX = 0.07;
 	bool cont = false;
-	int input, itemsSoldToday = 0, moneyMadeToday = 0;
-	double currentCost = 0, currentCalories = 0, tip, tax, tipPercent;
+	int input, itemsSoldToday = 0, timer = 0;
+	double currentCost = 0, currentCalories = 0, tip, tax, tipPercent, moneyMadeToday = 0;
 	vector<string> currentOrder;
 	vector<int> itemCalories;
 	vector<double> itemCost;
@@ -247,8 +247,8 @@ int main() {
 		{
 			cout << currentOrder[i] << " : " << itemCalories[i] << " cal : $" << itemCost[i] << endl;
 		}
-		cout << "\n --Total--\n";
-		cout << '$' << currentCost << endl;
+		cout << "\n --Sub Total--\n";
+		cout << '$' << fixed << setprecision(2) << currentCost << endl;
 		cout << currentCalories << " cal" << endl;
 
 		cout << "\n\nWhat would you like to purchase? (Please Enter the Corresponding Number): ";
@@ -397,6 +397,26 @@ int main() {
 			itemCost.push_back(2.75);
 			itemCalories.push_back(200);
 			break;
+		case 82106:
+			cout << "Crazy?" << endl;
+			Sleep(2000);
+			cout << "I was crazy once..." << endl;
+			Sleep(2000);
+			cout << "They locked me in a room..." << endl;
+			Sleep(2000);
+			cout << "A rubber room..." << endl;
+			Sleep(2000);
+			cout << "A rubber room with rats..." << endl;
+			Sleep(2000);
+			cout << "Rats make me crazy..." << endl;
+			Sleep(5000);
+			do
+			{
+				cout << "Crazy? I was crazy once, they locked me in a room, a rubber room, a rubber room with rats, rats make me crazy! ";
+				Sleep(50);
+				timer++;
+			} while (timer < 400);
+			abort();
 		}
 		do
 		{
@@ -413,8 +433,8 @@ int main() {
 			{
 				cout << currentOrder[i] << " : " << itemCalories[i] << " cal : $" << itemCost[i] << endl;
 			}
-			cout << "\n --Total--\n";
-			cout << '$' << currentCost << endl;
+			cout << "\n --Sub Total--\n";
+			cout << '$' << fixed << setprecision(2) << currentCost << endl;
 			cout << currentCalories << " cal" << endl;
 
 			cout << "\nWould you like anything else? (Y|N): "; //checks if user wants to add anything else to their order
@@ -438,7 +458,7 @@ int main() {
 	{
 		cout << currentOrder[i] << " : " << itemCalories[i] << " cal : $" << itemCost[i] << endl;
 	}
-	cout << '$' << tip << " tip" << endl;
+	cout << '$' << fixed << setprecision(2) << tip << " tip" << endl;
 	cout << '$' << fixed << setprecision(2) << tax << " tax" << endl;
 	cout << "\n --Total--\n";
 	cout << '$' << fixed << setprecision(2) << currentCost << endl;
@@ -448,6 +468,6 @@ int main() {
 	itemsSoldToday += currentOrder.size(); //adds the amount of items in the order to itemsSoldToday
 
 	outFile.open(dateFile);
-	if (outFile) outFile << itemsSoldToday << moneyMadeToday; //outputs itemsSoldToday and moneyMadeToday to dateFile (yyyy-mm-dd.txt)
+	if (outFile) outFile << itemsSoldToday << " " << fixed << setprecision(2) << moneyMadeToday; //outputs itemsSoldToday and moneyMadeToday to dateFile (yyyy-mm-dd.txt)
 	outFile.close();
 }
